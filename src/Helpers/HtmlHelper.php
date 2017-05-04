@@ -40,8 +40,8 @@ class HtmlHelper {
                 if (empty($val)) {
                     continue;
                 }
-                $form .= '<optgroup label="' . $key . "\">\n";
-                foreach ($val as $optgroup_key => $optgroup_val) {
+                $form .= '<optgroup label="' . $val['name'] . "\">\n";
+                foreach ($val['options'] as $optgroup_key => $optgroup_val) {
                     $sel = in_array($optgroup_key, $selected) ? ' selected="selected"' : '';
                     $form .= '<option value="' . htmlspecialchars($optgroup_key) . '"' . $sel . '>'
                             . (string) $optgroup_val . "</option>\n";
